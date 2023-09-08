@@ -9,6 +9,10 @@ end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
+  sorted_arr = arr.sort.reverse
+  sorted_arr[0].to_i + sorted_arr[1].to_i
+  #to_i converts the value to 0 if not exists
+
 end
 
 def sum_to_n?(arr, number)
