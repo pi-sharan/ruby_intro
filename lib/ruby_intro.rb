@@ -28,11 +28,11 @@ end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
-  if (string.empty? || !string[0].match?(/[a-zA-Z]/))
+  if string.empty? || !string[0].match?(/[a-zA-Z]/)
     return false
   end
 
-  vowels = ['a', 'e', 'i', 'o', 'u']
+  vowels = %w[a e i o u]
   first_char = string.downcase[0]
 
   !vowels.include?(first_char)
