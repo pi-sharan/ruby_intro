@@ -4,6 +4,11 @@
 
 def sum(arr)
   # YOUR CODE HERE
+  total = 0
+  for curr_elem in arr do
+    total += curr_elem
+  end
+  return total
 end
 
 def max_2_sum(arr)
