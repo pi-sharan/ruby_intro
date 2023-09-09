@@ -28,9 +28,7 @@ end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
-  if string.empty? || !string[0].match?(/[a-zA-Z]/)
-    return false
-  end
+  return false if string.empty? || !string[0].match?(/[a-zA-Z]/)
 
   vowels = %w[a e i o u]
   first_char = string.downcase[0]
@@ -43,7 +41,7 @@ def binary_multiple_of_4?(string)
   return false unless string.match?(/\A[01]+\z/)
 
   number = string.to_i(2)
-  return ( number % 4 == 0 )
+  (number % 4).zero?
 end
 
 # Part 3
@@ -52,21 +50,18 @@ end
 class BookInStock
   # YOUR CODE HERE
 
-  #getter setter automatically created
+  # getter setter automatically created
   attr_accessor :isbn, :price
 
-  #constructor
-  def initialize(_isbn, _price)
-    if _isbn == '' || _price <= 0
-      raise ArgumentError.new("Incorrect Arguments")
-    end
-    @isbn = _isbn
-    @price = _price
+  # constructor
+  def initialize(isbn, price)
+    raise ArgumentError, 'Incorrect Arguments' if isbn == '' || price <= 0
+
+    @isbn = isbn
+    @price = price
   end
 
   def price_as_string
-    formatted_amount = sprintf("$%.2f", @price)
-    return formatted_amount
+    format('$%.2f', @price)
   end
-
 end
