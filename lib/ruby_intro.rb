@@ -64,4 +64,9 @@ class BookInStock
     @price = _price
   end
 
+  def price_as_string
+    formatted_amount = sprintf("$%.2f", @price)
+    return formatted_amount
+  end
+
 end
