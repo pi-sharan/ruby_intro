@@ -51,4 +51,17 @@ end
 # Object representing a book
 class BookInStock
   # YOUR CODE HERE
+
+  #getter setter automatically created
+  attr_accessor :isbn, :price
+
+  #constructor
+  def initialize(_isbn, _price)
+    if _isbn == '' || _price <= 0
+      raise ArgumentError.new("Incorrect Arguments")
+    end
+    @isbn = _isbn
+    @price = _price
+  end
+
 end
